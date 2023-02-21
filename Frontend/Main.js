@@ -1,5 +1,22 @@
 // -- Splash Screen
 const splash = document.querySelector('.splash-screen');
+r1 = null;
+r2 = null;
+r3 = null;
+r4 = null;
+r5 = null;
+r6 = null;
+r7 = null;
+r8 = null;
+
+g1 = null;
+g2 = null;
+g3 = null;
+g4 = null;
+g5 = null;
+g6 = null;
+g7 = null;
+g8 = null;
 
 // starting splash fade out animation after 3 seconds
 document.addEventListener('DOMContentLoaded', (e) => {
@@ -25,118 +42,156 @@ getXmlHttpRequestObject = function () {
     return xhr;
 };
 
-// function sendDataCallback() {
-//     // check if response is ready or not
-//     if (xhr.readyState == 4 && xhr.status == 201) {
-//         dataDiv = document.getElementsByClassName('input-codename');
-//         // set current data text
-//         dataDiv.innerHTML = xhr.responseText;
-//     }
-// }
-
 function sendData(id, name) {
     xhr = getXmlHttpRequestObject();
-    //xhr.onreadystatechange = sendDataCallback;
-    // asynchronous requests
     xhr.open("POST", "http://localhost:6969/insertPlayer/" + id + "/" + name, true);
-    //xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    // send request over the network
-    //xhr.send(JSON.stringify({"id": id, "name": name}));
     xhr.send();
 }
-
-// function getDataCallback() {
-// 	// check if response is ready or not
-//     if (xhr.readyState == 4 && xhr.status == 200) {
-//         //dataDiv = document.getElementById('PLACEHOLDER');
-//         // set current data text
-//         //dataDiv.innerHTML = xhr.responseText;
-//         console.log(xhr.response);
-//         return xhr.response;
-//     }
-// }
 
 function getData(idNum) {
-    var response;
-    let xhr = new XMLHttpRequest();
-    // xhr = getXmlHttpRequestObject();
-    //xhr.onreadystatechange = getDataCallback;
-    // asynchronous requests
-    xhr.open("GET", "http://localhost:6969/getCodeName/" + idNum, true);
-    //xhr.onreadystatechange = getDataCallback();
-    // send request over the network
+    xhr = getXmlHttpRequestObject();
+    xhr.open("GET", "http://localhost:6969/getCodeName/" + idNum, false);
     xhr.send();
-    xhr.onload = function(){
-      console.log(xhr.response);
-      response = xhr.response;
+    
+    if(xhr.status == 200){
+      return xhr.response
+    }else{
+      return null;
     }
-    return response;
 }
 
-// document.addEventListener("keydown", (event) => {
-//   if (event.keyCode === 9) { 
-//     // add FIX for user pressing enter without a space selected ?
-// 	user_id = document.getElementsByClassName('input-id').value; // FIX
-// 	user_name = document.getElementsByClassName('input-codename').value; // FIX
-	
-//   console.log(getData(1));
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode === 9) {
 
-//   sendData(5, "bill");
-//   }
-
-  document.addEventListener("keydown", (event) => {
-    if (event.keyCode === 13) {
-		// add FIX for user pressing enter without a space selected ?
-		var user1_id = document.getElementById('r1-id').value; 
-		var user1_name = document.getElementById('r1-cn').value;
-		var user2_id = document.getElementById('g1-id').value;
-		var user2_name = document.getElementById('g1-cn').value;
-		
-    if(user1_id && user1_name){
-      sendData(user1_id, user1_name);
-    }
-    
-    if(user2_id && user2_name){
-      sendData(user2_id, user2_name);
+    if(document.getElementById('r1-id').value && !document.getElementById('r1-cn').value && !r1){
+      r1 = getData(document.getElementById('r1-id').value)
+      document.getElementById('r1-cn').value = r1;
+    }else if(document.getElementById('r1-id').value && document.getElementById('r1-cn').value && !r1){
+      sendData(document.getElementById('r1-id').value, document.getElementById('r1-cn').value)
+      r1 = document.getElementById('r1-cn').value
     }
 
-		// // an id was just entered for either player
-		// if ((user1_id && !user1_name) || (user2_id && !user2_name)) {
-		// 	if (user1_id && !user1_name) {
-		// 		sendData(user1_id, user1_name);
-		// 		//getData()?
-		// 	}
-		// 	else if (user2_id && !user2_name) {
-		// 		sendData(user2_id.textContent, user2_name.textContent);
-		// 		//getData()?
-		// 	}
-		// }
-		// // a codename was just entered for either player 
-		// else if ((user1_id && user1_name && !user2_id) || (user2_id && user2_name && !user1_id)) {
-		// 	if (user1_id && user1_name && !user2_id)
-		// 		sendData(user1_id.textContent, user1_name.textContent);
-		// 	else if (user2_id && user2_name && !user1_id)
-		// 		sendData(user2_id.textContent, user2_name.textContent);
-		// }
-		// return nothing for all other cases
+    if(document.getElementById('r2-id').value && !document.getElementById('r2-cn').value && !r2){
+      r2 = getData(document.getElementById('r2-id').value)
+      document.getElementById('r2-cn').value = r2;
+    }else if(document.getElementById('r2-id').value && document.getElementById('r2-cn').value && !r2){
+      sendData(document.getElementById('r2-id').value, document.getElementById('r2-cn').value)
+      r2 = document.getElementById('r2-cn').value
+    }
+
+    if(document.getElementById('r3-id').value && !document.getElementById('r3-cn').value && !r3){
+      r3 = getData(document.getElementById('r3-id').value)
+      document.getElementById('r3-cn').value = r3;
+    }else if(document.getElementById('r3-id').value && document.getElementById('r3-cn').value && !r3){
+      sendData(document.getElementById('r3-id').value, document.getElementById('r3-cn').value)
+      r3 = document.getElementById('r3-cn').value
+    }
+
+    if(document.getElementById('r4-id').value && !document.getElementById('r4-cn').value && !r4){
+      r4 = getData(document.getElementById('r4-id').value)
+      document.getElementById('r4-cn').value = r4;
+    }else if(document.getElementById('r4-id').value && document.getElementById('r4-cn').value && !r4){
+      sendData(document.getElementById('r4-id').value, document.getElementById('r4-cn').value)
+      r4 = document.getElementById('r4-cn').value
+    }
+
+    if(document.getElementById('r5-id').value && !document.getElementById('r5-cn').value && !r5){
+      r5 = getData(document.getElementById('r5-id').value)
+      document.getElementById('r5-cn').value = r5;
+    }else if(document.getElementById('r5-id').value && document.getElementById('r5-cn').value && !r5){
+      sendData(document.getElementById('r5-id').value, document.getElementById('r5-cn').value)
+      r5 = document.getElementById('r5-cn').value
+    }
+
+    if(document.getElementById('r6-id').value && !document.getElementById('r6-cn').value && !r6){
+      r6 = getData(document.getElementById('r6-id').value)
+      document.getElementById('r6-cn').value = r6;
+    }else if(document.getElementById('r6-id').value && document.getElementById('r6-cn').value && !r6){
+      sendData(document.getElementById('r6-id').value, document.getElementById('r6-cn').value)
+      r6 = document.getElementById('r6-cn').value
+    }
+
+    if(document.getElementById('r7-id').value && !document.getElementById('r7-cn').value && !r7){
+      r7 = getData(document.getElementById('r7-id').value)
+      document.getElementById('r7-cn').value = r7;
+    }else if(document.getElementById('r7-id').value && document.getElementById('r7-cn').value && !r7){
+      sendData(document.getElementById('r7-id').value, document.getElementById('r7-cn').value)
+      r7 = document.getElementById('r7-cn').value
+    }
+
+    if(document.getElementById('r8-id').value && !document.getElementById('r8-cn').value && !r8){
+      r8 = getData(document.getElementById('r8-id').value)
+      document.getElementById('r8-cn').value = r8;
+    }else if(document.getElementById('r8-id').value && document.getElementById('r8-cn').value && !r8){
+      sendData(document.getElementById('r8-id').value, document.getElementById('r8-cn').value)
+      r8 = document.getElementById('r8-cn').value
+    }
+
+    if(document.getElementById('g1-id').value && !document.getElementById('g1-cn').value && !g1){
+      g1 = getData(document.getElementById('g1-id').value)
+      document.getElementById('g1-cn').value = g1;
+    }else if(document.getElementById('g1-id').value && document.getElementById('g1-cn').value && !g1){
+      sendData(document.getElementById('g1-id').value, document.getElementById('g1-cn').value)
+      g1 = document.getElementById('g1-cn').value
+    }
+
+    if(document.getElementById('g2-id').value && !document.getElementById('g2-cn').value && !g2){
+      g2 = getData(document.getElementById('g2-id').value)
+      document.getElementById('g2-cn').value = g2;
+    }else if(document.getElementById('g2-id').value && document.getElementById('g2-cn').value && !g2){
+      sendData(document.getElementById('g2-id').value, document.getElementById('g2-cn').value)
+      g2 = document.getElementById('g2-cn').value
+    }
+
+    if(document.getElementById('g3-id').value && !document.getElementById('g3-cn').value && !g3){
+      g3 = getData(document.getElementById('g3-id').value)
+      document.getElementById('g3-cn').value = g3;
+    }else if(document.getElementById('g3-id').value && document.getElementById('g3-cn').value && !g3){
+      sendData(document.getElementById('g3-id').value, document.getElementById('g3-cn').value)
+      g3 = document.getElementById('g3-cn').value
+    }
+
+    if(document.getElementById('g4-id').value && !document.getElementById('g4-cn').value && !g4){
+      g4 = getData(document.getElementById('g4-id').value)
+      document.getElementById('g4-cn').value = g4;
+    }else if(document.getElementById('g4-id').value && document.getElementById('g4-cn').value && !g4){
+      sendData(document.getElementById('g4-id').value, document.getElementById('g4-cn').value)
+      g4 = document.getElementById('g4-cn').value
+    }
+
+    if(document.getElementById('g5-id').value && !document.getElementById('g5-cn').value && !g5){
+      g5 = getData(document.getElementById('g5-id').value)
+      document.getElementById('g5-cn').value = g5;
+    }else if(document.getElementById('g5-id').value && document.getElementById('g5-cn').value && !g5){
+      sendData(document.getElementById('g5-id').value, document.getElementById('g5-cn').value)
+      g5 = document.getElementById('g5-cn').value
+    }
+
+    if(document.getElementById('g6-id').value && !document.getElementById('g6-cn').value && !g6){
+      g6 = getData(document.getElementById('g6-id').value)
+      document.getElementById('g6-cn').value = g6;
+    }else if(document.getElementById('g6-id').value && document.getElementById('g6-cn').value && !g6){
+      sendData(document.getElementById('g6-id').value, document.getElementById('g6-cn').value)
+      g6 = document.getElementById('g6-cn').value
+    }
+
+    if(document.getElementById('g7-id').value && !document.getElementById('g7-cn').value && !g7){
+      g7 = getData(document.getElementById('g7-id').value)
+      document.getElementById('g7-cn').value = g7;
+    }else if(document.getElementById('g7-id').value && document.getElementById('g7-cn').value && !g7){
+      sendData(document.getElementById('g7-id').value, document.getElementById('g7-cn').value)
+      g7 = document.getElementById('g7-cn').value
+    }
+
+    if(document.getElementById('g8-id').value && !document.getElementById('g8-cn').value && !g8){
+      g8 = getData(document.getElementById('g8-id').value)
+      document.getElementById('g8-cn').value = g8;
+    }else if(document.getElementById('g8-id').value && document.getElementById('g8-cn').value && !g8){
+      sendData(document.getElementById('g8-id').value, document.getElementById('g8-cn').value)
+      g8 = document.getElementById('g8-cn').value
+    }
+
 		else
 			return;
 	}
-
-	//(ASSUMING USER INPUTS DATA AND PRESSES ENTER ON FIRST SPACE BEFORE SECOND SPACE)
-	// if user presses enter on a blank space 
-	// if ((!user_id && !user_name) || (!user_id && user_name))
-	// 	return;
-	// // if user presses enter after inserting id 
-	// else if (user_id && !user_name)
-	// 	// implies that DB retrieval has not occurred yet, so send data
-	// 	//sendData(user_id, user_name);
-	// 	getData(user_id); //?
-	// 	return;
-	// // if user presses enter after inserting codename
-	// // else if (user_id && user_name)
-	// // 	// implies that DB retrieval has already occurred (and found no match), so just write to it
-	// // 	sendData(user_id, user_name);
-	// // 	return;
-  //}
 });
