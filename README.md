@@ -11,7 +11,11 @@ $ python -m venv venv
 
 Activate the environment-
 
+windows-
 $ venv\Scripts\activate.bat
+
+linux-
+$ venv\Scripts\activate
 
 If successful, the environment should be activated and you can now run the application
 
