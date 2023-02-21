@@ -1,6 +1,4 @@
 from flask import Flask, jsonify, request
-import flask
-import json
 from flask_cors import CORS
 from supabase import create_client, Client
 
