@@ -1,5 +1,6 @@
 // -- Splash Screen
 const splash = document.querySelector('.splash-screen');
+const start = document.querySelector('.start-button');
 r1 = null;
 r2 = null;
 r3 = null;
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   }, 4000);
 });
 
-// HTTP request
+// -- HTTP request
 var xhr = null;
 getXmlHttpRequestObject = function () {
     if (!xhr) {
@@ -42,12 +43,14 @@ getXmlHttpRequestObject = function () {
     return xhr;
 };
 
+// send player information (id, codename) to database
 function sendData(id, name) {
     xhr = getXmlHttpRequestObject();
     xhr.open("POST", "http://localhost:6969/insertPlayer/" + id + "/" + name, true);
     xhr.send();
 }
 
+// receive player information (codename) from database
 function getData(idNum) {
     xhr = getXmlHttpRequestObject();
     xhr.open("GET", "http://localhost:6969/getCodeName/" + idNum, false);
@@ -60,6 +63,8 @@ function getData(idNum) {
     }
 }
 
+// calling sendData() or getData() depending on what fields the user inputs
+	// also assigns codename retrieval to variables for playeraction screen usage 
 document.addEventListener("keydown", (event) => {
   if (event.keyCode === 9) {
 
@@ -195,3 +200,11 @@ document.addEventListener("keydown", (event) => {
 			return;
 	}
 });
+
+// game start timer countdown then go to player action
+start.addEventListener("click", function () {
+	
+	//Implement timer 
+	
+	window.open("playeraction.html", "_self");
+})
