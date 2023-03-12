@@ -9,15 +9,15 @@ Implements a laser tag game interface with two screens, one for player entry, an
 Application can be ran locally using the python virtual environment
 First, locate the Backend directory in the command prompt using 'cd'.
 Next, create a virtual environment:
-`$ python -m venv venv`
+$ python -m venv venv
 
 Activate the environment:
 
 windows-
-`$ venv\Scripts\activate.bat`
+$ venv\Scripts\activate.bat
 
 linux-
-`$ venv\Scripts\activate`
+$ venv\Scripts\activate
 
 If successful, the environment should be activated and you can now run the application
 
@@ -25,9 +25,9 @@ To run ws:
 
 If haven't run a virtual environment before install below using pip-
 
-`$ pip install supabase`
-`$ pip install flask`
-`$ pip install -U flask-cors`
+$ pip install supabase
+$ pip install flask
+$ pip install -U flask-cors
 
 Run Main.py and now application can hit endponts.
 
