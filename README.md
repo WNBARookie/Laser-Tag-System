@@ -39,6 +39,8 @@ There are two teams, red and green, with up to 8 players in each.
 
 Each player enters their ID and codename (up to 8 players MAX per team). 
 
+Use tab to cycle through entry areas to autofill your codename for a returning player, and store your ID and codename if you are a new player.
+
 If the user is a new player, then they will be allowed to enter a codename after entering their ID. If the user is a returning player, then their codename will be automatically set.
 
 New player's information will be stored in the database for when they return.
