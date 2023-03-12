@@ -1,4 +1,6 @@
 //player action js functionality
+const gameStartTime = 30;
+let time = gameStartTime;
 
 //players and score variables
 r1 = localStorage.getItem("r1");
@@ -36,8 +38,18 @@ g8_s = 0;
 r_s = 0;
 g_s = 0;
 
+function updateCountdownTimer() {
+  const minutes = Math.floor(time/60);
+  let seconds = time % 60;
+    if(time>0) {
+      time--;
+      document.getElementById('time-remaining').innerHTML = `Time Remaining: ${time}`;
+    }
+    else 
+      document.getElementById('time-remaining').innerHTML = 'Game Over';
+}
 document.getElementById("teams").addEventListener("load", loadPlayers());
-
+setInterval(updateCountdownTimer, 750);
 function loadPlayers() {
 
   document.getElementById("g1-n").innerHTML = g1;

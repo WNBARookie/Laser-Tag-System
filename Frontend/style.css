@@ -176,6 +176,13 @@ p {
   background-color: #cccccc;
 }
 
+.countdown-timer {
+  position: relative;
+  width: 75%;
+  font-size: 3px;
+  font-family: 'Retro Gaming';
+}
+
 
 .teamcolumns {
   top: 48px;
