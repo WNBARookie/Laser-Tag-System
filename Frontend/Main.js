@@ -1,6 +1,13 @@
 // -- Splash Screen
 const splash = document.querySelector('.splash-screen');
 const start = document.querySelector('.start-button');
+
+const startGameTime = 10;
+const gameTime = 30;
+let time = startGameTime;
+
+let timerRunning = false;
+
 r1 = null;
 r2 = null;
 r3 = null;
@@ -63,7 +70,23 @@ function getData(idNum) {
     }
 }
 
-// calling sendData() or getData() depending on what fields the user inputs
+function updateCountdownTimer() {
+    const minutes = Math.floor(time/60);
+    let seconds = time % 60;
+    if(timerRunning){
+      time--;
+      document.getElementById('start-button').innerHTML = 'Update';
+      if(time<=0)
+        window.open("playeraction.html", "_self");
+      else
+        document.getElementById('start-button').innerHTML = `${minutes}:${seconds}`;
+    }
+}
+
+setInterval(updateCountdownTimer, 1000);
+
+
+  // calling sendData() or getData() depending on what fields the user inputs
 	// also assigns codename retrieval to variables for playeraction screen usage 
 document.addEventListener("keydown", (event) => {
   if (event.keyCode === 9) {
@@ -203,8 +226,8 @@ document.addEventListener("keydown", (event) => {
 
 // game start timer countdown then go to player action
 start.addEventListener("click", function () {
-	
+	document.getElementById('start-button').innerHTML = 'Starting';
 	//Implement timer 
-	
-	window.open("playeraction.html", "_self");
+	timerRunning = true;
+	//window.open("playeraction.html", "_self");
 })
