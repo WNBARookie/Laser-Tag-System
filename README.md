@@ -1,15 +1,17 @@
-# Laser-Tag-System
-Laser tag system for Software Engineering in Spring 2023
+# Laser Tag System
+Laser tag system prepared by Team 9 for Software Engineering in Spring 2023
 
-Python Virtual Environment Instructions:
+Implements a laser tag game interface with two screens, one for player entry, and one for game progress.
+
+## Python Virtual Environment Instructions:
 
 Application can be ran locally using the python virtual environment
 First, locate the Backend directory in the command prompt using 'cd'.
-Next, create a virtual environment-
+Next, create a virtual environment:
 	
 $ python -m venv venv
 
-Activate the environment-
+Activate the environment:
 
 windows-
 $ venv\Scripts\activate.bat
@@ -21,22 +23,29 @@ If successful, the environment should be activated and you can now run the appli
 
 To run ws:
 
-If haven't ran on virtual environment before install below using pip-
+If haven't run a virtual environment before install below using pip-
 
 $ pip install supabase
 $ pip install flask
 $ pip install -U flask-cors
 
-Run Main.py, and now application can hit endponts.
+Run Main.py and now application can hit endponts.
 
-Run application:
+To run application open index.html using your preferred browser.
 
-Open index.html using a browser.
-
-Player Entry Screen Instructions:
+## Player Entry Instructions:
 
 There are two teams, red and green, with up to 8 players in each. 
-Each player enters their ID and codename (press tab to move from field to field). 
-If the user is a new player, then they will be allowed to enter a codename after entering their ID.
-If the user is a returning player, then their codename will be automatically set.
+
+Each player enters their ID and codename (up to 8 players MAX per team). 
+
+If the user is a new player, then they will be allowed to enter a codename after entering their ID. If the user is a returning player, then their codename will be automatically set.
+
 New player's information will be stored in the database for when they return.
+
+## Play Action Instructions:
+After entering players, click START GAME to begin playing.
+
+Players will fill up in the green and red team windows.
+
+Before the game starts there is a 30 second warning to prepare.
