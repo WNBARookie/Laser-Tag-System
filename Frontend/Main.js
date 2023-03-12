@@ -83,7 +83,7 @@ function updateCountdownTimer() {
     }
 }
 
-setInterval(updateCountdownTimer, 1000);
+setInterval(updateCountdownTimer, 750);
 
 
   // calling sendData() or getData() depending on what fields the user inputs
