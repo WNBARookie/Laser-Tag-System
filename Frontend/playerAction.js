@@ -1,5 +1,5 @@
 //player action js functionality
-const gameStartTime = 180;
+const gameStartTime = 360;
 let time = gameStartTime;
 
 //players and score variables
