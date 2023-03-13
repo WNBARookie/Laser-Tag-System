@@ -1,5 +1,5 @@
 //player action js functionality
-const gameStartTime = 30;
+const gameStartTime = 180;
 let time = gameStartTime;
 
 //players and score variables
@@ -43,7 +43,7 @@ function updateCountdownTimer() {
   let seconds = time % 60;
     if(time>0) {
       time--;
-      document.getElementById('time-remaining').innerHTML = `Time Remaining: ${time}`;
+      document.getElementById('time-remaining').innerHTML = `Time Remaining: ${minutes}:${seconds}`;
     }
     else 
       document.getElementById('time-remaining').innerHTML = 'Game Over';

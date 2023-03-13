@@ -2,7 +2,7 @@
 const splash = document.querySelector('.splash-screen');
 const start = document.querySelector('.start-button');
 
-const startGameTime = 10;
+const startGameTime = 30;
 const gameTime = 30;
 let time = startGameTime;
 
@@ -75,11 +75,10 @@ function updateCountdownTimer() {
     let seconds = time % 60;
     if(timerRunning){
       time--;
-      document.getElementById('start-button').innerHTML = 'Update';
-      if(time<=0)
+      if(time<0)
         window.open("playeraction.html", "_self");
       else
-        document.getElementById('start-button').innerHTML = `${minutes}:${seconds}`;
+        document.getElementById('start-button').innerHTML = `${seconds}`;
     }
 }
 
@@ -258,7 +257,6 @@ document.addEventListener("keydown", (event) => {
 
 // game start timer countdown then go to player action
 start.addEventListener("click", function () {
-	document.getElementById('start-button').innerHTML = 'Starting';
 	//Implement timer 
 	timerRunning = true;
 })
