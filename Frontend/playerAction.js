@@ -98,10 +98,14 @@ let tracks = [
   './assets/music_tracks/Track08.mp3',
 ];
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  const audio = document.querySelector('audio');
-  let randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
-  audio.src = randomTrack;
-  audio.volume = 0.2;
-  audio.play();
-});
+document.addEventListener(
+  'click',
+  function () {
+    const audio = document.querySelector('audio');
+    let randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
+    audio.src = randomTrack;
+    audio.volume = 0.2;
+    audio.play();
+  },
+  { once: true }
+);
