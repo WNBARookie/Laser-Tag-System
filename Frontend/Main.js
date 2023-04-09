@@ -8,6 +8,7 @@ let time = startGameTime;
 
 let timerRunning = false;
 
+localStorage.clear();
 r1 = null;
 r2 = null;
 r3 = null;

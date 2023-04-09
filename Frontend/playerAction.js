@@ -57,14 +57,23 @@ function loadPlayers() {
   document.getElementById('g6-n').innerHTML = g6;
   document.getElementById('g7-n').innerHTML = g7;
   document.getElementById('g8-n').innerHTML = g8;
-  document.getElementById('g1-s').innerHTML = g1_s;
-  document.getElementById('g2-s').innerHTML = g2_s;
-  document.getElementById('g3-s').innerHTML = g3_s;
-  document.getElementById('g4-s').innerHTML = g4_s;
-  document.getElementById('g5-s').innerHTML = g5_s;
-  document.getElementById('g6-s').innerHTML = g6_s;
-  document.getElementById('g7-s').innerHTML = g7_s;
-  document.getElementById('g8-s').innerHTML = g8_s;
+
+  if(g1!=null)
+    document.getElementById('g1-s').innerHTML = g1_s;
+  if(g2!=null)
+    document.getElementById('g2-s').innerHTML = g2_s;
+  if(g3!=null)
+    document.getElementById('g3-s').innerHTML = g3_s;
+  if(g4!=null)
+    document.getElementById('g4-s').innerHTML = g4_s;
+  if(g5!=null)
+    document.getElementById('g5-s').innerHTML = g5_s;
+  if(g6!=null)
+    document.getElementById('g6-s').innerHTML = g6_s;
+  if(g7!=null)
+    document.getElementById('g7-s').innerHTML = g7_s;
+  if(g8!=null)
+    document.getElementById('g8-s').innerHTML = g8_s;
   document.getElementById('g-s').innerHTML = g_s;
 
   document.getElementById('r1-n').innerHTML = r1;
@@ -75,14 +84,23 @@ function loadPlayers() {
   document.getElementById('r6-n').innerHTML = r6;
   document.getElementById('r7-n').innerHTML = r7;
   document.getElementById('r8-n').innerHTML = r8;
-  document.getElementById('r1-s').innerHTML = r1_s;
-  document.getElementById('r2-s').innerHTML = r2_s;
-  document.getElementById('r3-s').innerHTML = r3_s;
-  document.getElementById('r4-s').innerHTML = r4_s;
-  document.getElementById('r5-s').innerHTML = r5_s;
-  document.getElementById('r6-s').innerHTML = r6_s;
-  document.getElementById('r7-s').innerHTML = r7_s;
-  document.getElementById('r8-s').innerHTML = r8_s;
+
+  if(r1!=null)
+    document.getElementById('r1-s').innerHTML = r1_s;
+  if(r2!=null)
+    document.getElementById('r2-s').innerHTML = r2_s;
+  if(r3!=null)
+    document.getElementById('r3-s').innerHTML = r3_s;
+  if(r4!=null)
+    document.getElementById('r4-s').innerHTML = r4_s;
+  if(r5!=null)
+    document.getElementById('r5-s').innerHTML = r5_s;
+  if(r6!=null)
+    document.getElementById('r6-s').innerHTML = r6_s;
+  if(r7!=null)
+    document.getElementById('r7-s').innerHTML = r7_s;
+  if(r8!=null)
+    document.getElementById('r8-s').innerHTML = r8_s;
   document.getElementById('r-s').innerHTML = r_s;
 }
 
