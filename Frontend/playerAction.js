@@ -46,8 +46,11 @@ function updateCountdownTimer() {
     document.getElementById('time-remaining').innerHTML = `Time Remaining: ${minutes}:${seconds}`;
   } else document.getElementById('time-remaining').innerHTML = 'Game Over';
 }
+
 document.getElementById('teams').addEventListener('load', loadPlayers());
+
 setInterval(updateCountdownTimer, 750);
+
 function loadPlayers() {
   document.getElementById('g1-n').innerHTML = g1;
   document.getElementById('g2-n').innerHTML = g2;
