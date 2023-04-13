@@ -33,6 +33,14 @@ Run Main.py and now application can hit endponts.
 
 To run application open index.html using your preferred browser.
 
+## Run Server:
+
+Open terminal
+
+$ cd Frontend
+$ npm install ws
+$ node webServer
+
 ## Player Entry Instructions:
 
 There are two teams, red and green, with up to 8 players in each. 
@@ -53,3 +61,12 @@ After entering players, click START GAME to begin playing.
 Players will fill up in the green and red team windows.
 
 Before the game starts there is a 30 second warning to prepare.
+
+## Run Traffic Generator:
+Open terminal
+
+$ cd Frontend
+$ npm install prompt-sync
+$ node trafficGenerator
+
+Follow prompts in console to generate traffic. Enter players starting with 1 as first red player.

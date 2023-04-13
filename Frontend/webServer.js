@@ -1,21 +1,3 @@
-// var WebSocket = require('ws');
-// var http = require('http');
-// var PORT = 7501 ;
-// var portOut = 7500;
-// var HOST = '127.0.0.1';
-
-// var server = new WebSocket.Server({port: PORT, host: HOST});
-// var server2 = new WebSocket.Server({port: portOut, host: HOST});
-
-// server.on('connection', (stream) => {
-//     server2.on('connection', (out) =>{
-//         stream.on('message', (data) => {
-//             console.log(data.toString())
-//             out.send(data.toString())
-//         })
-//     })
-// })
-
 const WebSocket = require('ws');
 const server = new WebSocket.Server({
   port: 7501,

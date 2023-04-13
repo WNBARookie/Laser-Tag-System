@@ -4,9 +4,7 @@ const prompt = require("prompt-sync")();
 var client = new WebSocket("ws://127.0.0.1:7501/");
 
 client.onopen = function(){
-  // console.log("connected");
-  // client.send("hello from tf")
-
+	
 console.log("this program will generate some test traffic for 2 players on the red ")
 console.log("team as well as 2 players on the green team")
 console.log("")
