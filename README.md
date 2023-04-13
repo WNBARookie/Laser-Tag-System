@@ -74,6 +74,7 @@ Open a new terminal
 $ cd Frontend
 
 $ npm install
+
 $ npm run ws
 
 ### Run Traffic Generator:
