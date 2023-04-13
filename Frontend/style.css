@@ -206,7 +206,8 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  height: 350px;
+  height:350px;
+  max-height: 350px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -217,6 +218,9 @@ p {
   border-width: 10px;
   border-radius: 30px;
   background-color: #0e1a27;
+
+  color: white;
+
 }
 
 .playactiontext {
@@ -270,4 +274,12 @@ p {
 .score{
   display: flex;
   justify-content: right;
+}
+
+.playertext{
+  color:white;
+  font-size: 30px;
+  text-align: left;
+  vertical-align: top;
+
 }
