@@ -1,0 +1,16 @@
+{
+  "name": "laser-tag-system-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "tg": "node trafficGenerator.js",
+    "ws": "node webServer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "ws": "^8.13.0"
+  }
+}
