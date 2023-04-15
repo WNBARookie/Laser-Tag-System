@@ -37,7 +37,7 @@ function loop(){
 	console.log(message)
 	i+=1;
 	client.send(message.toString())
-  if(i < counter){
+  if(i <= counter){
     loop();
   }else{
     console.log("program complete")

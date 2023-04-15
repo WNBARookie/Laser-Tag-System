@@ -26,6 +26,6 @@ client.onmessage = function (e) {
   if (numMessages > maxMessages) {
     scoreListing.removeChild(scoreListing.children[2]);
   }
-  updatePlayerScores('$(playerX)');
+  //updatePlayerScores(`${playerX}`);
 };
 

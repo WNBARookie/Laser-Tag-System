@@ -23,7 +23,7 @@ UDPClientSocketTransmit = socket.socket(family=socket.AF_INET, type=socket.SOCK_
 
 # counter number of events, random player and order
 i = 1
-while i < int(counter):
+while i <= int(counter):
 	if random.randint(1,2) == 1:
 		redplayer = red1
 	else:
