@@ -41,6 +41,16 @@ Run Main.py and now application can hit endponts.
 
 $ python Main.py
 
+### Run Web Service:
+
+Open a new terminal
+
+$ cd Frontend
+
+$ npm install
+
+$ npm run ws
+
 ## Run Frontend:
 
 To run application open index.html using your preferred browser.
@@ -66,16 +76,6 @@ After entering players, click START GAME to begin playing.
 Players will fill up in the green and red team windows.
 
 Before the game starts there is a 30 second warning to prepare.
-
-### Run Web Service:
-
-Open a new terminal
-
-$ cd Frontend
-
-$ npm install
-
-$ npm run ws
 
 ### Run Traffic Generator:
 

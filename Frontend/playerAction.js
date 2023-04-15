@@ -59,6 +59,77 @@ let rBlink, gBlink = false;
 player_ids = [r1_id, r2_id, r3_id, r4_id, r5_id, r6_id, r7_id, r8_id,
 					g1_id, g2_id, g3_id, g4_id, g5_id, g6_id, g7_id, g8_id,];
 
+red_team = [r1, r2, r3, r4, r5, r6, r7, r8]
+green_team = [g1, g2, g3, g4, g5, g6, g7, g8]
+
+function logHit(player_X, player_Y){
+
+  const playerX = (element) => element == player_X; 
+  const playerY = (element) => element == player_Y;
+  x = player_ids.findIndex(playerX);
+  y = player_ids.findIndex(playerY);
+	
+  switch(x) {
+		case 0: x_name = r1; break;
+		case 1: x_name = r2; break;
+		case 2: x_name = r3; break;
+		case 3: x_name = r4; break;
+		case 4: x_name = r5;	break;
+		case 5: x_name = r6; break;
+		case 6: x_name = r7; break;
+		case 7: x_name = r8; break;
+		case 8: x_name = g1; break;
+		case 9: x_name = g2; break;
+		case 10: x_name = g3; break;
+		case 11: x_name = r4; break;
+		case 12: x_name = r5; break;
+		case 13: x_name = r6; break;
+		case 14: x_name = r7; break;
+		case 15: x_name = r8; break;
+  }
+
+  switch(y) {
+		case 0: y_name = r1; break;
+		case 1: y_name = r2; break;
+		case 2: y_name = r3; break;
+		case 3: y_name = r4; break;
+		case 4: y_name = r5;	break;
+		case 5: y_name = r6; break;
+		case 6: y_name = r7; break;
+		case 7: y_name = r8; break;
+		case 8: y_name = g1; break;
+		case 9: y_name = g2; break;
+		case 10: y_name = g3; break;
+		case 11: y_name = r4; break;
+		case 12: y_name = r5; break;
+		case 13: y_name = r6; break;
+		case 14: y_name = r7; break;
+		case 15: y_name = r8; break;
+  }
+
+  const newLine = document.createElement('span');
+  for(i=0; i < red_team.length; i++){
+    if(red_team[i] == x_name)
+    newLine.style.color = '#ff0000'
+  }
+
+  for(i=0; i < green_team.length; i++){
+    if(green_team[i] == x_name)
+    newLine.style.color = '#008000'
+  }
+  
+  newLine.innerText = `${x_name} hit ${y_name}`;
+  const scoreListing = document.querySelector('.scorelisting');
+  scoreListing.appendChild(newLine);
+
+  // Limit the number of messages displayed
+  const maxMessages = 10;
+  const numMessages = scoreListing.children.length;
+  if (numMessages > maxMessages) {
+    scoreListing.removeChild(scoreListing.children[2]);
+  }
+}
+
 function updatePlayerScores(player_id) {
   //Find matching player id to connect it to its corresponding player score
   const matchPlayer = (element) => element == player_id; 
