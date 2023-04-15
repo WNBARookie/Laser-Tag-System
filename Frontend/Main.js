@@ -318,27 +318,3 @@ start.addEventListener('click', function () {
   //Implement timer
   timerRunning = true;
 });
-
-// music track selector
-let tracks = [
-  './assets/music_tracks/Track01.mp3',
-  './assets/music_tracks/Track02.mp3',
-  './assets/music_tracks/Track03.mp3',
-  './assets/music_tracks/Track04.mp3',
-  './assets/music_tracks/Track05.mp3',
-  './assets/music_tracks/Track06.mp3',
-  './assets/music_tracks/Track07.mp3',
-  './assets/music_tracks/Track08.mp3',
-];
-
-document.addEventListener(
-  'click',
-  function () {
-    const audio = document.querySelector('audio');
-    let randomTrack = tracks[Math.floor(Math.random() * tracks.length)];
-    audio.src = randomTrack;
-    audio.volume = 0.2;
-    audio.play();
-  },
-  { once: true }
-);

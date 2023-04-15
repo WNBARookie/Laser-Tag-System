@@ -251,14 +251,14 @@ p {
   justify-content: center;
 }
 .teamheaders-green {
-  color: green;
+  color: #008000;
   font-size: 50px;
   align-self: flex-start;
   text-align: left;
   justify-content: center;
 }
 .teamheaders-red {
-  color: red;
+  color: #ff0000;
   font-size: 50px;
   align-self: flex-start;
   text-align: left;
