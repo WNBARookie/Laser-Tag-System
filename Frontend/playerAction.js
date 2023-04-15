@@ -54,10 +54,9 @@ g8_s = 0;
 r_s = 0;
 g_s = 0;
 
-console.log("test");
 
 function updatePlayerScores(player_id) {
-	console.log('Player ID: ' + player_id);
+	console.log(player_id);
 	updateTeamScores();
 }
 
@@ -68,8 +67,6 @@ function updateTeamScores() {
 function updateCountdownTimer() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
-  if (seconds.toString().length < 2)
-	seconds = '0' + seconds
   if (time > 0) {
     time--;
     document.getElementById('time-remaining').innerHTML = `Time Remaining: ${minutes}:${seconds}`;
