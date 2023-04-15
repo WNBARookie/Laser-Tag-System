@@ -56,7 +56,7 @@ g8_id = localStorage.getItem('g8_id');
 
 let rBlink, gBlink = false;
 
-const player_ids = [r1_id, r2_id, r3_id, r4_id, r5_id, r6_id, r7_id, r8_id,
+player_ids = [r1_id, r2_id, r3_id, r4_id, r5_id, r6_id, r7_id, r8_id,
 					g1_id, g2_id, g3_id, g4_id, g5_id, g6_id, g7_id, g8_id,];
 
 function updatePlayerScores(player_id) {
@@ -89,6 +89,7 @@ function updateTeamScores() {
   r_s = r1_s + r2_s + r3_s + r4_s + r5_s + r6_s + r7_s + r8_s;
   g_s = g1_s + g2_s + g3_s + g4_s + g5_s + g6_s + g7_s + g8_s;
   updateHighScore();
+  loadPlayers();
 }
 
 function updateHighScore() {
@@ -119,7 +120,7 @@ function updateCountdownTimer() {
 
 document.getElementById('teams').addEventListener('load', loadPlayers());
 
-setInterval(updateCountdownTimer, 750);
+setInterval(updateCountdownTimer, 1000);
 
 function loadPlayers() {
   document.getElementById('g1-n').innerHTML = g1;

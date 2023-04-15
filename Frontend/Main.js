@@ -81,7 +81,7 @@ function updateCountdownTimer() {
   }
 }
 
-setInterval(updateCountdownTimer, 750);
+setInterval(updateCountdownTimer, 1000);
 
 // calling sendData() or getData() depending on what fields the user inputs
 // also assigns codename retrieval to variables for playeraction screen usage
