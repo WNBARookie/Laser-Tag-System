@@ -4,21 +4,37 @@ let time = gameStartTime;
 
 //players and score variables
 r1 = localStorage.getItem('r1');
+r1_id = localStorage.getItem('r1_id');
 r2 = localStorage.getItem('r2');
+r2_id = localStorage.getItem('r2_id');
 r3 = localStorage.getItem('r3');
+r3_id = localStorage.getItem('r3_id');
 r4 = localStorage.getItem('r4');
+r4_id = localStorage.getItem('r4_id');
 r5 = localStorage.getItem('r5');
+r5_id = localStorage.getItem('r5_id');
 r6 = localStorage.getItem('r6');
+r6_id = localStorage.getItem('r6_id');
 r7 = localStorage.getItem('r7');
+r7_id = localStorage.getItem('r7_id');
 r8 = localStorage.getItem('r8');
+r8_id = localStorage.getItem('r8_id');
 g1 = localStorage.getItem('g1');
+g1_id = localStorage.getItem('g1_id');
 g2 = localStorage.getItem('g2');
+g2_id = localStorage.getItem('g2_id');
 g3 = localStorage.getItem('g3');
+g3_id = localStorage.getItem('g3_id');
 g4 = localStorage.getItem('g4');
+g4_id = localStorage.getItem('g4_id');
 g5 = localStorage.getItem('g5');
+g5_id = localStorage.getItem('g5_id');
 g6 = localStorage.getItem('g6');
+g6_id = localStorage.getItem('g6_id');
 g7 = localStorage.getItem('g7');
+g7_id = localStorage.getItem('g7_id');
 g8 = localStorage.getItem('g8');
+g8_id = localStorage.getItem('g8_id');
 r1_s = 0;
 r2_s = 0;
 r3_s = 0;
@@ -37,6 +53,17 @@ g7_s = 0;
 g8_s = 0;
 r_s = 0;
 g_s = 0;
+
+console.log("test");
+
+function updatePlayerScores(player_id) {
+	console.log('Player ID: ' + player_id);
+	updateTeamScores();
+}
+
+function updateTeamScores() {
+	console.log("test2");
+}
 
 function updateCountdownTimer() {
   const minutes = Math.floor(time / 60);
