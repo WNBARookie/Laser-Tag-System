@@ -2,7 +2,7 @@
 const gameStartTime = 360;
 let time = gameStartTime;
 
-//players and score variables
+//player names with ids and score variables
 r1 = localStorage.getItem('r1');
 r1_id = localStorage.getItem('r1_id');
 r2 = localStorage.getItem('r2');
@@ -67,6 +67,8 @@ function updateTeamScores() {
 function updateCountdownTimer() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
+  if (seconds.toString().length < 2)
+	seconds = '0' + seconds;
   if (time > 0) {
     time--;
     document.getElementById('time-remaining').innerHTML = `Time Remaining: ${minutes}:${seconds}`;
