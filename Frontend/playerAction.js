@@ -4,37 +4,21 @@ let time = gameStartTime;
 
 //player names with ids and score variables
 r1 = localStorage.getItem('r1');
-r1_id = localStorage.getItem('r1_id');
 r2 = localStorage.getItem('r2');
-r2_id = localStorage.getItem('r2_id');
 r3 = localStorage.getItem('r3');
-r3_id = localStorage.getItem('r3_id');
 r4 = localStorage.getItem('r4');
-r4_id = localStorage.getItem('r4_id');
 r5 = localStorage.getItem('r5');
-r5_id = localStorage.getItem('r5_id');
 r6 = localStorage.getItem('r6');
-r6_id = localStorage.getItem('r6_id');
 r7 = localStorage.getItem('r7');
-r7_id = localStorage.getItem('r7_id');
 r8 = localStorage.getItem('r8');
-r8_id = localStorage.getItem('r8_id');
 g1 = localStorage.getItem('g1');
-g1_id = localStorage.getItem('g1_id');
 g2 = localStorage.getItem('g2');
-g2_id = localStorage.getItem('g2_id');
 g3 = localStorage.getItem('g3');
-g3_id = localStorage.getItem('g3_id');
 g4 = localStorage.getItem('g4');
-g4_id = localStorage.getItem('g4_id');
 g5 = localStorage.getItem('g5');
-g5_id = localStorage.getItem('g5_id');
 g6 = localStorage.getItem('g6');
-g6_id = localStorage.getItem('g6_id');
 g7 = localStorage.getItem('g7');
-g7_id = localStorage.getItem('g7_id');
 g8 = localStorage.getItem('g8');
-g8_id = localStorage.getItem('g8_id');
 r1_s = 0;
 r2_s = 0;
 r3_s = 0;
@@ -53,15 +37,73 @@ g7_s = 0;
 g8_s = 0;
 r_s = 0;
 g_s = 0;
+r1_id = localStorage.getItem('r1_id');
+r2_id = localStorage.getItem('r2_id');
+r3_id = localStorage.getItem('r3_id');
+r4_id = localStorage.getItem('r4_id');
+r5_id = localStorage.getItem('r5_id');
+r6_id = localStorage.getItem('r6_id');
+r7_id = localStorage.getItem('r7_id');
+r8_id = localStorage.getItem('r8_id');
+g1_id = localStorage.getItem('g1_id');
+g2_id = localStorage.getItem('g2_id');
+g3_id = localStorage.getItem('g3_id');
+g4_id = localStorage.getItem('g4_id');
+g5_id = localStorage.getItem('g5_id');
+g6_id = localStorage.getItem('g6_id');
+g7_id = localStorage.getItem('g7_id');
+g8_id = localStorage.getItem('g8_id');
 
+let rBlink, gBlink = false;
+
+const player_ids = [r1_id, r2_id, r3_id, r4_id, r5_id, r6_id, r7_id, r8_id,
+					g1_id, g2_id, g3_id, g4_id, g5_id, g6_id, g7_id, g8_id,];
 
 function updatePlayerScores(player_id) {
-	console.log(player_id);
-	updateTeamScores();
+  //Find matching player id to connect it to its corresponding player score
+  const matchPlayer = (element) => element == player_id; 
+  i = player_ids.findIndex(matchPlayer);
+	
+  switch(i) {
+		case 0: r1_s += 10; break;
+		case 1: r2_s += 10; break;
+		case 2: r3_s += 10; break;
+		case 3: r4_s += 10; break;
+		case 4: r5_s += 10;	break;
+		case 5: r6_s += 10; break;
+		case 6: r7_s += 10; break;
+		case 7: r8_s += 10; break;
+		case 8: g1_s += 10; break;
+		case 9: g2_s += 10; break;
+		case 10: g3_s += 10; break;
+		case 11: g4_s += 10; break;
+		case 12: g5_s += 10; break;
+		case 13: g6_s += 10; break;
+		case 14: g7_s += 10; break;
+		case 15: g8_s += 10; break;
+  }
+  updateTeamScores();
 }
 
 function updateTeamScores() {
-	console.log("test2");
+  r_s = r1_s + r2_s + r3_s + r4_s + r5_s + r6_s + r7_s + r8_s;
+  g_s = g1_s + g2_s + g3_s + g4_s + g5_s + g6_s + g7_s + g8_s;
+  updateHighScore();
+}
+
+function updateHighScore() {
+  if (r_s > g_s && !rBlink) {
+	document.getElementById("r-s").classList.toggle("blink"); 
+    rBlink = true; 
+	if (gBlink) {
+	   document.getElementById("g-s").classList.toggle("blink");
+       gBlink = false; }}
+  if (g_s > r_s && !gBlink) {
+	document.getElementById("g-s").classList.toggle("blink");
+	gBlink = true; 
+	if (rBlink) {
+	   document.getElementById("r-s").classList.toggle("blink"); 
+       rBlink = false; }}
 }
 
 function updateCountdownTimer() {
