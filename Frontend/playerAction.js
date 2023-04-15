@@ -41,6 +41,8 @@ g_s = 0;
 function updateCountdownTimer() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
+  if (seconds.toString().length < 2)
+	seconds = '0' + seconds
   if (time > 0) {
     time--;
     document.getElementById('time-remaining').innerHTML = `Time Remaining: ${minutes}:${seconds}`;
