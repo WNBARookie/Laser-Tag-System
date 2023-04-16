@@ -41,7 +41,7 @@ Run Main.py and now application can hit endponts.
 
 $ python Main.py
 
-### Run Web Service:
+### Run Web Server:
 
 Open a new terminal
 
@@ -69,15 +69,19 @@ New player's information will be stored in the database for when they return.
 
 Before starting the game, make sure to press the TAB key to automatically set the codenames for existing players or insert new players into the database.
 
+After entering players, click START GAME to begin playing.
+
+Before the game starts there is a 30 second warning to prepare.
+
 ## Play Action Instructions:
 
 \*In order to get the music to start playing, randomly click anywhere on the screen. This is needed due to browser restrictions needing user interaction before auto playing any audio
 
-After entering players, click START GAME to begin playing.
-
 Players will fill up in the green and red team windows.
 
-Before the game starts there is a 30 second warning to prepare.
+Player scores and teams scores will update when players hit other players(10 points per hit). The winning team score will flash.
+
+The Current Game Action will show who hits who and the color of the team points are awarded.
 
 ### Run Traffic Generator:
 
@@ -87,4 +91,4 @@ $ cd Frontend
 
 $ npm run tg
 
-Follow prompts in console to generate traffic. Enter players starting with 1 as first red player.
+Follow prompts in console to generate traffic.
