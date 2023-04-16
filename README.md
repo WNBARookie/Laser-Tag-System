@@ -41,6 +41,8 @@ Run Main.py and now application can hit endponts.
 
 $ python Main.py
 
+## Run Frontend:
+
 ### Run Web Server:
 
 Open a new terminal
@@ -51,7 +53,7 @@ $ npm install
 
 $ npm run ws
 
-## Run Frontend:
+### Run Application:
 
 To run application open index.html using your preferred browser.
 
