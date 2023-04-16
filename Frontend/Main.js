@@ -3,8 +3,8 @@ const splash = document.querySelector('.splash-screen');
 const start = document.querySelector('.start-button');
 
 const startGameTime = 30;
-const gameTime = 30;
 let time = startGameTime;
+
 
 let timerRunning = false;
 
@@ -72,13 +72,19 @@ function getData(idNum) {
 }
 
 function updateCountdownTimer() {
-  const minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  if (timerRunning) {
-    time--;
-    if (time < 0) window.open('playeraction.html', '_self');
-    else document.getElementById('start-button').innerHTML = `${seconds}`;
-  }
+    const minutes = Math.floor(time/60);
+    let seconds = time % 60;
+    if(timerRunning){
+      time--;
+      if(time<0)
+        window.open("playeraction.html", "_self");
+      else
+        document.getElementById('start-button').innerHTML = `${seconds}`;
+    }
+    else if(timerRunning=false){
+
+      document.getElementById('start-button').innerHTML = 'Start';
+    }
 }
 
 setInterval(updateCountdownTimer, 1000);
@@ -314,7 +320,11 @@ document.addEventListener('keydown', (event) => {
 });
 
 // game start timer countdown then go to player action
-start.addEventListener('click', function () {
-  //Implement timer
-  timerRunning = true;
-});
+start.addEventListener("click", function () {
+	//Implement timer 
+  if(timerRunning)
+    timerRunning = false;
+  else
+    timerRunning = true;
+})
+
