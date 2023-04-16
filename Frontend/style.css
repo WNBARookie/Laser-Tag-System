@@ -151,9 +151,19 @@ p {
 
 .footer {
   margin-top: 75px;
-  display: flex;
+  display: block; /* flex */
   justify-content: center;
   align-items: center;
+}
+
+.btn-group-vertical {
+  display: block;
+}
+.flex-parent {
+  display: flex;
+}
+.jc-center {
+  justify-content: center;
 }
 
 .start-button {
@@ -163,7 +173,8 @@ p {
   border: none;
   border-radius: 10px;
   font-family: 'Retro Gaming';
-  display: block;
+  position: relative;
+  left:120px;
 }
 
 .start-button:hover {
