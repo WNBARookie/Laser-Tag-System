@@ -75,6 +75,8 @@ After entering players, click START GAME to begin playing.
 
 Before the game starts there is a 30 second warning to prepare.
 
+Click countdown button to pause countdown if needed. Click again to resume countdown.
+
 ## Play Action Instructions:
 
 \*In order to get the music to start playing, randomly click anywhere on the screen. This is needed due to browser restrictions needing user interaction before auto playing any audio
