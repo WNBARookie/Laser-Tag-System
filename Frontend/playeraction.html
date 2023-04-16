@@ -3,7 +3,7 @@
 
 <head>
   <title>Player Action Screen</title>
-  <meta property="og:title" content="Rich Forked Bear" />
+  <meta property="og:title"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
 
@@ -113,16 +113,21 @@
         </div>
         
       </div>
+
       <div class="scorelisting">
         <span class="playactiontext">
           <span>Current Game Action</span>
           <br />
         </span>
+        <span id="time-remaining" class="timeremaining">Time Remaining: x</span>
       </div>
-      <span id="time-remaining" class="timeremaining">Time Remaining: x</span>
   </div>
 
+
+  <!-- music tracks -->
+  <audio autoplay="autoplay" src=""></audio>
   <script src="./playerAction.js"></script>
+  <script src="./webClient.js"></script>
 </body>
 
 </html>

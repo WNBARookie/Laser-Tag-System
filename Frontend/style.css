@@ -185,18 +185,44 @@ p {
 
 
 .teamcolumns {
-  top: 48px;
-  right: 327px;
-  width: 1266px;
-  height: 483px;
-  display: flex;
   position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   border-color: #cad436;
   border-style: solid;
   border-width: 10px;
   border-radius: 30px;
-  justify-content: flex-start;
 }
+
+.scorelisting {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height:350px;
+  max-height: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-color: #cad436;
+  border-style: solid;
+  border-width: 10px;
+  border-radius: 30px;
+  background-color: #0e1a27;
+
+  color: white;
+
+}
+
 .playactiontext {
   top: -59px;
   color: #1ba4e3;
@@ -205,6 +231,17 @@ p {
   font-size: 50px;
   font-weight: 700;
 }
+
+.timeremaining {
+  top: 340px;
+  left: 0px;
+  color: white;
+
+  position: absolute;
+  font-size: 50px;
+  font-weight: 700;
+}
+
 .teamheaders {
   flex: 0 0 auto;
   width: 50%;
@@ -214,42 +251,17 @@ p {
   justify-content: center;
 }
 .teamheaders-green {
-  color: green;
+  color: #008000;
   font-size: 50px;
   align-self: flex-start;
   text-align: left;
   justify-content: center;
 }
 .teamheaders-red {
-  color: red;
+  color: #ff0000;
   font-size: 50px;
   align-self: flex-start;
   text-align: left;
-}
-.scorelisting {
-  left: 327px;
-  width: 1266px;
-  bottom: 63px;
-  height: 415px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  border-color: #cad436;
-  border-style: solid;
-  border-width: 10px;
-  border-radius: 30px;
-  flex-direction: column;
-  background-color: #0e1a27;
-}
-.timeremaining {
-  left: 349px;
-  color: rgb(255, 255, 255);
-  bottom: 18px;
-  position: absolute;
-  font-size: 40px;
-  align-self: flex-start;
-  font-style: normal;
-  font-weight: 700;
 }
 
 .player-line{
@@ -262,4 +274,21 @@ p {
 .score{
   display: flex;
   justify-content: right;
+}
+
+.playertext{
+  color:white;
+  font-size: 30px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
