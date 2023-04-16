@@ -1,7 +1,3 @@
 venv/
 env/
-udpClient.js
-udpClient.py
-udpServer.py
-trafficGenerator.py
 Frontend/node_modules
