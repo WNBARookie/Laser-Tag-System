@@ -57,8 +57,6 @@ To run application open index.html using your preferred browser.
 
 ## Player Entry Instructions:
 
-\*In order to get the music to start playing, randomly click anywhere on the screen. This is needed due to browser restrictions needing user interaction before auto playing any audio
-
 There are two teams, red and green, with up to 8 players in each.
 
 Each player enters their ID and codename (up to 8 players MAX per team).
